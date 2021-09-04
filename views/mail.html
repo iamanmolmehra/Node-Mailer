@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ｎｏｄｅ Ｍａｉｌｅｒ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon"
+        href="data:image/png;base64,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"
+        type="image/icon type" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
+    <title>Node Mailer</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-image: url("/Media/bund.jpg")
+        }
+
+        .main {
+            text-align: center;
+            margin-left: 25%;
+            margin-right: 25%;
+            margin-top: -10px;
+            color: blanchedalmond;
+        } 
+
+        .table input {
+            width: 60%;
+            height: 40px;
+        }
+
+        .table button {
+            background-color: black;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 60px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+        }
+
+        .access {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .main {
+                margin-left: 1%;
+                margin-right: 1%;
+            }
+
+            .table input {
+                width: 80%;
+                height: 40px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<div>
+    <!-- Navbar -->
+    <nav style="height: 50px; width: 100%;" class="navbar navbar-expand-sm navbar-light bg-light">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <a style="margin-top: -25px;" class="navbar-brand " href="#">
+                    <img src="../Media/mail.png" width="50" alt="" loading="lazy" />
+                </a>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Navbar brand -->
+                <a class="navbar-brand mt-lg-0" href="#">
+                    <img src="media/sehmat_logo.PNG" width="50" alt="" loading="lazy" />
+                </a>
+                <!-- Left links -->
+                <ul style="margin-left: -20px;" class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="#">Ｎｏｄｅ Ｍａｉｌｅｒ</a>
+                    </li>
+                </ul>
+                <!-- Left links -->
+            </div>
+            <!-- Collapsible wrapper -->
+
+            <!-- Right elements -->
+            <div style="margin-right: 80px;" class="navbar-nav ml-auto">
+                <a class="nav-link active" aria-current="page" href="#">Ｈｏｍｅ</a>
+                <a class="nav-link " href="#">Ａｂｏｕｔ</a>
+                <a class="nav-link " href="#">Ｍａｉｌｓ</a>
+                <a class="nav-link" href="#">ＣｏｎｔａｃｔＵｓ</a>
+            </div>
+            <!-- Right elements -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <div></div>
+    <!-- Navbar -->
+    <br>
+    <div class="access">
+        <h4>
+            Heya there! Allow less secure app: <a href="https://myaccount.google.com/lesssecureapps?pli=1"
+                target="blanck">
+                Click me!</a>
+        </h4>
+        <p>(This is necessary to allow your less secure app)</p>
+
+    </div>
+        <class ></class>
+    <div>
+
+    </div>
+    <div style="padding:3%">
+        <div class="main">
+            <form class="table" action="/mail" method="POST">
+                <h2>𝐄𝐧𝐭𝐞𝐫 𝐲𝐨𝐮𝐫 𝐍𝐚𝐦𝐞 :</h2>
+                <input type="name" name="name" placeholder="Anmol Mehra" />
+                <h2>𝐄𝐦𝐚𝐢𝐥 𝐀𝐝𝐝𝐫𝐞𝐬𝐬 :</h2>
+                <input type="email" name="user" placeholder="iamanjali@gmail.com" />
+                <h2>𝐏𝐚𝐬𝐬𝐰𝐨𝐫𝐝 :</h2>
+                <input type="password" name="password" placeholder="Abc@123" />
+                <h2>𝐒𝐞𝐧𝐝 𝐭𝐨 :</h2>
+                <input type="email" name="emailid" placeholder="iamanmol@gmail.com" />
+                <h2>𝐒𝐮𝐛𝐣𝐞𝐜𝐭 :</h2>
+                <input type="subject" name="subject" placeholder="Fluctuation of Electricity" />
+                <h2>𝐁𝐨𝐝𝐲 :</h2>
+                <input type="Body" name="text"
+                    placeholder="Respected Sir, With due respect, I would like to state that..." /> <br /><br />
+                <button type="submit" onclick="">Submit</button>
+                <br /><br />
+            </form>
+        </div>
+    </div>
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ONLINE MAIL</title>
+    <link rel="icon" type="image/jpg"
+        href="https://cdn3.iconfinder.com/data/icons/google-suits/32/16_gmail_email_mail_communication_message_service-512.png">
+    <style type="text/css">
+        .header {
+            padding: 1px;
+            background-color: red;
+            width: 100.8%;
+            margin: -12px -8px 0px -8px;
+            text-align: center;
+            color: white;
+        }
+
+        .table {
+            border: 2px solid red;
+            margin: 30px 23%;
+            padding: 20px;
+            padding-left: 100px;
+            background-color: black;
+            color: white;
+            text-shadow: 3px 3px 5px red;
+            opacity: 0.9;
+
+        }
+
+        input {
+            margin-bottom: 20px;
+            margin-left: 30px;
+        }
+
+        input[type="email"] {
+            width: 500px;
+            height: 30px;
+        }
+
+        input[type="password"] {
+            width: 490px;
+            height: 30px;
+        }
+
+        input[type="text"] {
+            width: 500px;
+            height: 50px;
+        }
+
+        textarea {
+            width: 500px;
+            height: 150px;
+            margin-left: 30px;
+        }
+
+        input[type="submit"] {
+            width: 400px;
+            height: 50px;
+            color: black;
+            font-size: 20px;
+            background-color: red;
+            border-color: red;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        c {
+            color: red;
+        }
+
+        @media screen and (max-width: 1700px) {
+            .table {
+                margin: 5px 20%;
+                padding-left: 30px;
+
+            }
+
+            textarea {
+                width: 500px;
+                height: 100px;
+            }
+        }
+
+        @media screen and (max-width: 990px) {
+            .table {
+                margin: 20px 0px;
+
+            }
+
+            input {
+                margin-bottom: 50px;
+            }
+
+            .header {
+                padding: 15px;
+                font-size: 30px;
+            }
+
+            h2 {
+                font-size: 70px;
+            }
+
+            input[type="email"] {
+                width: 90%;
+                height: 80px;
+                font-size: 40px;
+            }
+
+            input[type="password"] {
+                width: 100%;
+                height: 80px;
+                font-size: 40px;
+
+            }
+
+            input[type="text"] {
+                width: 90%;
+                height: 100px;
+                font-size: 40px;
+
+            }
+
+            textarea {
+                width: 95%;
+                height: 250px;
+                margin-left: 30px;
+                font-size: 50px;
+            }
+
+            input[type="submit"] {
+                width: 90%;
+                height: 150px;
+                color: black;
+                font-size: 90px;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body bgcolor="#cccccc">
+    <div class="header">
+        <h1>PMAIL</h1>
+    </div>
+    <div>
+        <form class="table" action="mail" method="POST">
+            <h2>
+                <c>✔ </c> Your Email :
+            </h2><input type="email" name="email" placeholder="Your Email...">
+            <h2>
+                <c>✔ </c> Your Password :
+            </h2><input type="password" name="password" placeholder="Your Password...">
+            <h2>
+                <c>✔ </c> Send To :
+            </h2><input type="email" name="emailid" placeholder="Send to">
+            <h2>
+                <c>✔ </c> Subject :
+            </h2><input type="text" name="sub" placeholder="Subject...">
+            <h2>
+                <c>✔ </c> Body :
+            </h2><textarea name="text" placeholder="Text..."></textarea><br><br>
+            <input onclick="al()" type="submit" value="Send">
+        </form>
+        <script>
+            function al() {
+                alert("Mail sending successfully...")
+            }
+        </script>
+    </div>
+</body>
+
+</html> -->

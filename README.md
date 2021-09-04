@@ -1,2 +1,2 @@
 # Node-Mailer
-I have a mailer which send emails directly as our gmail works, using npm node-mailer.
+I have made an mailer using node-mailer which send emails like google-mail.
